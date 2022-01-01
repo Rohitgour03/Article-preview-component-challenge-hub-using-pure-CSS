@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap');
+:root {
+    --Very-Dark-Grayish-Blue: hsl(217, 19%, 35%);
+    --Desaturated-Dark-Blue: hsl(214, 17%, 51%);
+    --Grayish-Blue: hsl(212, 23%, 69%);
+    --Light-Grayish-Blue: hsl(210, 46%, 95%);
+    --manrope-font: 'Manrope', sans-serif;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: var(--manrope-font);
+    height: 100vh;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+
+/* Card container */
+
+.container {
+    margin: 5rem auto;
+    width: 90%;
+    max-width: 23rem;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px hsl(217, 19%, 70%);
+    position: relative;
+}
+
+
+/* content container */
+
+.contain {
+    width: 80%;
+    margin: 0 auto;
+}
+
+
+/* Main content of the card */
+
+
+/* title of the card */
+
+.title {
+    color: var(--Very-Dark-Grayish-Blue);
+    font-size: 1.15rem;
+    margin-top: 2rem;
+}
+
+.card-txt {
+    font-size: 0.93rem;
+    color: var(--Desaturated-Dark-Blue);
+    line-height: 1.5;
+    font-weight: 100;
+}
+
+
+/* Person container */
+
+.person-ctn {}
+
+.img-ctn {
+    width: 40px;
+    height: 40px;
+}
+
+.img-ctn img {
+    border-radius: 100%;
+}
+
+p.name,
+p.date {
+    margin: 0;
+}
+
+p.name {
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: var(--Very-Dark-Grayish-Blue);
+}
+
+p.date {
+    font-size: 0.8rem;
+    color: var(--Desaturated-Dark-Blue);
+}
+
+.share-ctn {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--Light-Grayish-Blue);
+    border-radius: 100%;
+}
+
+.person-ctn,
+.social-flex {
+    padding: 1rem 0;
+    display: flex;
+    align-items: center;
+}
+
+.name-ctn,
+.social-links-ctn {
+    margin-left: 1rem;
+}
+
+.share-ctn {
+    margin-left: auto;
+}
+
+
+/* Social share container */
+
+.social-share-ctn {
+    display: flex;
+    background: var(--Very-Dark-Grayish-Blue);
+    width: 100%;
+    transition: all 300ms;
+    position: absolute;
+    transform: translateY(0%);
+}
+
+.show {
+    z-index: 1;
+    transform: translateY(-100%);
+}
+
+.social-share-ctn p {
+    margin: 0;
+}
+
+p.share-txt {
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 0.92rem;
+    color: var(--Grayish-Blue);
+    font-weight: 100;
+}
+
+.social-links-ctn,
+.social-links-ctn a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.social-links-ctn a+a {
+    margin-left: 0.8rem;
+}
+
+.share-ctn-2 {
+    background: var(--Desaturated-Dark-Blue);
+}
+
+.share-ctn-1 {
+    position: relative;
+}
+
+.social-share-ctn-bg {
+    display: none;
+}
+
+@media screen and (min-width: 968px) {
+    .container {
+        display: grid;
+        grid-template-columns: 35% 65%;
+        width: 80%;
+        max-width: 53rem;
+        overflow: visible;
+    }
+    .image-ctn {
+        background: url(./images/drawers.jpg) center left no-repeat;
+        background-size: cover;
+    }
+    .image-ctn img {
+        display: none;
+    }
+    .title {
+        font-size: 1.5rem;
+    }
+    .person-ctn {
+        padding-top: 0;
+        margin-bottom: 1rem;
+    }
+    .card-txt,
+    p.name,
+    p.date {
+        font-size: 0.95rem;
+    }
+    .social-share-ctn {
+        display: none;
+    }
+    .social-flex {
+        justify-content: center;
+    }
+    .social-share-ctn-bg {
+        display: block;
+        position: absolute;
+        background: var(--Very-Dark-Grayish-Blue);
+        width: 15rem;
+        top: -80px;
+        left: -100px;
+        border-radius: 10px;
+        opacity: 0;
+        transform: translateY(15px);
+        transition: all 300ms;
+    }
+    .social-share-ctn-bg p {
+        margin: 0;
+    }
+    .show-bg {
+        transform: translateY(-15px);
+        opacity: 1;
+    }
+    .social-share-ctn-bg::after {
+        content: '';
+        width: 15px;
+        height: 15px;
+        background: var(--Very-Dark-Grayish-Blue);
+        position: absolute;
+        transform: rotate(45deg);
+        bottom: -7px;
+        left: 45%;
+    }
+}
